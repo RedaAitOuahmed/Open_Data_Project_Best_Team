@@ -1,0 +1,23 @@
+{
+  "name": "open_data_project_best_team",
+  "version": "1.0.0",
+  "description": "\"best project everrrr\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedaAitOuahmed/Open_Data_Project_Best_Team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedaAitOuahmed/Open_Data_Project_Best_Team/issues"
+  },
+  "homepage": "https://github.com/RedaAitOuahmed/Open_Data_Project_Best_Team#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
+  }
+}
