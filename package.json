@@ -18,6 +18,8 @@
   "homepage": "https://github.com/RedaAitOuahmed/Open_Data_Project_Best_Team#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.4"
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.4",
+    "request": "^2.88.0"
   }
 }
