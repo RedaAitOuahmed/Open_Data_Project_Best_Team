@@ -18,7 +18,9 @@ module.exports = {
                 if (error) return reject(error);
                 try {
                     // JSON.parse() can throw an exception if not valid JSON
-                    resolve(JSON.parse(body));
+                    resolve(
+                        getImageObject(JSON.parse(body).hits[0])
+                    );
                 } catch(e) {
                     reject(e);
                 }
