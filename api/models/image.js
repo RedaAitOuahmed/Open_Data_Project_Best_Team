@@ -1,15 +1,26 @@
 var Request = require("request");
 
 module.exports = {
-    getById: async function (id) {
-        Request.get({
-            headers: {'content-type' : 'application/json'},
-            url:     'https://pixabay.com/api',
-            qs:   {'key' : '14176624-4fa63ba77e83e5b18bf876c11', 
-                    'id' : id }
-          }, function(error, response, body){
-            return body;
-          });
+    getById: function (id) {
+        return new Promise(function(resolve, reject){
+            Request.get({
+                headers: {'content-type' : 'application/json'},
+                url:     'https://pixabay.com/api',
+                qs:   {'key' : '14176624-4fa63ba77e83e5b18bf876c11', 
+                        'id' : id }
+                }, function(error, response, body){
+                // in addition to parsing the value, deal with possible errors
+                if (error) return reject(error);
+                try {
+                    // JSON.parse() can throw an exception if not valid JSON
+                    resolve(JSON.parse(body));
+                } catch(e) {
+                    reject(e);
+                }
+            });
+        });
+
+        
     },
 
     getByTheme: function (theme) {

@@ -9,8 +9,8 @@ exports.image_by_id = function(req, res) {
     // call function get by id of Image model class 
     var results = Image.getById(id);
     // format the response according to user preferences (json, csv, xml ...)
-    // Image.getById(id).then(results => res.json(results));
-    res.json("testing");
+    Image.getById(id).then(results => res.json(results));
+    // res.json("testing");
 //   Request.get("https://jsonplaceholder.typicode.com/todos/2",
 //     (error, response, body) => {
 //         if(error) {
