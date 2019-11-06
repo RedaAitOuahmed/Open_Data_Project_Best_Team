@@ -7,4 +7,8 @@ module.exports = function(app) {
         .get(image_controller.image_by_id);
     app.route('/Images/')
         .get(image_controller.image_all);
+
+  // Quotes routes
+  app.route('/Quotes/:id')
+  .get(quotes_controller.quotes_by_id);
 };
