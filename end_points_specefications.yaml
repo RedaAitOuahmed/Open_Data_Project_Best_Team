@@ -12,18 +12,7 @@ info:
 host: "petstore.swagger.io"
 basePath: "/v2"
 tags:
-- name: "Carte postale avec un poème"
-  description: "Associer une image par thème d'un poème"
-  externalDocs:
-    description: "Plus de détails"
-    url: "http://swagger.io"
-- name: "Poèmes"
-  description: "API Poèmes"
-- name: "user"
-  description: "Operations about user"
-  externalDocs:
-    description: "Find out more about our store"
-    url: "http://swagger.io"
+- name: "Quotes"
 schemes:
 - "https"
 - "http"
