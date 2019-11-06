@@ -3,14 +3,14 @@
 var Quotes = require('../models/quotes')
 
 
-exports.quotes_by_id = function(req, res) { 
+exports.quotes_by_author = function(req, res) { 
     // retrieve quotes id from request
-    var id = req.params.id;
+    var author = req.params.author;
     // call function get by id of Quotes model class 
-    var results = Quotes.getById(id);
+    var results = Quotes.getByAuthor(author);
     // format the response according to user preferences (json, csv, xml ...)
-    // Quotes.getById(id).then(results => res.json(results));
-    res.json("testing");
+    results.then(results => res.json(results));
+    //res.json("testing");
 //   Request.get("https://jsonplaceholder.typicode.com/todos/2",
 //     (error, response, body) => {
 //         if(error) {

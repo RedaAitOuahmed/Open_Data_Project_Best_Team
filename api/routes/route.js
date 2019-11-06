@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(app) {
     var image_controller = require('../controllers/image_controller');
+    var quotes_controller = require('../controllers/quotes_controller');
 
   // Image routes
     app.route('/Images/getById/:id')
@@ -11,6 +12,6 @@ module.exports = function(app) {
         .get(image_controller.image_all);
 
   // Quotes routes
-  app.route('/Quotes/:id')
-  .get(quotes_controller.quotes_by_id);
+  app.route('/Quotes/author/:author')
+  .get(quotes_controller.quotes_by_author);
 };
