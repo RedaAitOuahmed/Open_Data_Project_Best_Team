@@ -16,5 +16,20 @@ routes(app); //register the route
 
 app.listen(port);
 
+app.get('/names', function(req,res) {
+    res.format({
+        'application/json': function () {
+            res.json(resu);
+        },
+
+        'application/csv': function () {
+            res.csv();
+        }
+
+        'application/xml': function () {
+            res.xml();
+        }
+    })
+})
 
 console.log('todo list RESTful API server started on: ' + port);
