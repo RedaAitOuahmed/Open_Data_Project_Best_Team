@@ -1,6 +1,6 @@
 'use strict';
 
-var Quotes = require('../models/quotes')
+var Quotes = require('../models/quotes');
 
 
 exports.quotes_by_author = function(req, res) { 
