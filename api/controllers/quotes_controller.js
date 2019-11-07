@@ -27,15 +27,7 @@ exports.quotes_by_author = function(req, res) {
                 res.csv(li_test,true,{separator: "\t"});
             }
         }))
-    //res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+
 };
   
 
@@ -63,13 +55,5 @@ exports.quotes_by_tags = function(req, res) {
                 res.csv(li_test,true);
             }
         }))
-    //res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+
 };

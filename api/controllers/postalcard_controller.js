@@ -15,16 +15,7 @@ exports.random_postalcard = function(req, res) {
     var results_promise = quote_promise.then(quotes =>
         Postalcard.getByQuote(quotes[Math.floor(Math.random()*quotes.length)]));
     // format the response according to user preferences (json, csv, xml ...)
-    results_promise.then(results => res.json(results));
-    // res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+    results_promise.then(results => res.json(results)); 
 };
 
 
@@ -38,12 +29,6 @@ exports.postalcard_by_tag = function(req, res) {
     //var random_tag = "woman";
     var quote_promise = Quote.getByTags(tag);
     // call function get by id of Image model class 
-    // var results_promise = new Promise(function(resolve, reject){
-    //       quote_promise.then(quotes =>
-    //         resolve(quotes.map(q=> Postalcard.getByQuote(q))));
-    //     });
-    
-    //results_promise.then(results => console.log(results));
 
     var results_promise = quote_promise.then(quotes =>
 
@@ -53,23 +38,29 @@ exports.postalcard_by_tag = function(req, res) {
                   })
             )
       );
-    // results_promise = [1,2,3].map(
-    //           q=> new Promise(function(resolve, reject){
-    //                   resolve(Postalcard.getByQuote(q));
-    //               })
-    //         )
     results_promise.then(resultss => Promise.all(resultss).then(results => res.json(results)));
-    // format the response according to user preferences (json, csv, xml ...)
-    // Promise.all(results_promise).then(results => res.json(results));
-    // res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+ 
+   
+};
+
+
+exports.postalcard_by_author = function(req, res) {
+
+
+    var author = req.params.author;
+    var quote_promise = Quote.getByAuthor(author);
+
+    var results_promise = quote_promise.then(quotes =>
+
+            quotes.map(
+              q=> new Promise(function(resolve, reject){
+                      resolve(Postalcard.getByQuote(q));
+                  })
+            )
+      );
+
+    results_promise.then(resultss => Promise.all(resultss).then(results => res.json(results)));
+
 };
 
 
