@@ -3,9 +3,10 @@ const port = process.env.PORT || 3000
 var express = require('express')
 var csv = require('csv-express')
 var fs = require('file-system')
-var xmlparser = require('express-xml-bodyparser');
-var  app = express()
+var cors = require('cors')
 
+var  app = express()
+app.use(cors());
 
   //model = require('./api/models/model'), //we'll need it later
 var  bodyParser = require('body-parser');
