@@ -4,6 +4,7 @@ var express = require('express')
 var csv = require('csv-express')
 var fs = require('file-system')
 var  app = express()
+app.use(cors());
 
 
   //model = require('./api/models/model'), //we'll need it later
