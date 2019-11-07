@@ -14,18 +14,14 @@ module.exports = {
         
     },
 
- getByTag: function (tag) {
-
+ 	getByTag: function (tag) {
         return new Promise(function(resolve, reject){
         	var tags = tag;
-        	//console.log(tags);
         	Image.getByTheme(tags[0]).then(images => resolve({'tag' : tag,
         		'image' : images})
         		);
         });
-
-        //JSON.parse(body).results.map(x => getQuotesObject(x))
-    }
+	}
 
 
 

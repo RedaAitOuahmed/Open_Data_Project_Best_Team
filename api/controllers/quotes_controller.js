@@ -10,15 +10,8 @@ exports.quotes_by_author = function(req, res) {
     var results = Quotes.getByAuthor(author);
     // format the response according to user preferences (json, csv, xml ...)
     results.then(results => res.json(results));
-    //res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+    console.log(results);
+    
 };
   
 
@@ -29,13 +22,5 @@ exports.quotes_by_tags = function(req, res) {
     var results = Quotes.getByTags(tags);
     // format the response according to user preferences (json, csv, xml ...)
     results.then(results => res.json(results));
-    //res.json("testing");
-//   Request.get("https://jsonplaceholder.typicode.com/todos/2",
-//     (error, response, body) => {
-//         if(error) {
-//             return console.dir(error);
-//         }
-//         var obj = JSON.parse(body);
-//         res.json(Image.getById(1));
-//     });  
+
 };
