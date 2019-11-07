@@ -23,5 +23,7 @@ module.exports = function(app) {
   app.route('/postal_card/random')
       .get(postalcard_controller.random_postalcard);
   
-  		
+   // Postal Card routes
+  app.route('/postal_card/tags/:tag')
+      .get(postalcard_controller.postalcard_by_tag);		
 };

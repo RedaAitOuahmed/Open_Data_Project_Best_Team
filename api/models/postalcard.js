@@ -6,13 +6,28 @@ module.exports = {
 
         return new Promise(function(resolve, reject){
         	var tags = quote.tags;
-        	Image.getByTheme(tags[1]).then(image => resolve({'quote' : quote,
-        		'image' : image	})
+        	Image.getByTheme(tags[1]).then(images => resolve({'quote' : quote,
+        		'image' : images[Math.floor(Math.random()*images.length)]})
         		);
-        		
         });
 
         
     },
+
+ getByTag: function (tag) {
+
+        return new Promise(function(resolve, reject){
+        	var tags = tag;
+        	//console.log(tags);
+        	Image.getByTheme(tags[0]).then(images => resolve({'tag' : tag,
+        		'image' : images})
+        		);
+        });
+
+        //JSON.parse(body).results.map(x => getQuotesObject(x))
+    }
+
+
+
 
 };

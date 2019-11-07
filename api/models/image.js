@@ -42,7 +42,7 @@ module.exports = {
                 try {
                 // JSON.parse() can throw an exception if not valid JSON
                     resolve(
-                        getImageObject(JSON.parse(body).hits[0])
+                        JSON.parse(body).hits.map(x => getImageObject(x) )
                     );
                 } catch(e) {
                   reject(e);
