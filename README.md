@@ -5,6 +5,9 @@
 2- API images : https://pixabay.com/api/docs/#api_search_images <br/>
 3- API Text Processing : https://www.textrazor.com/ <br/>
 
+# Explicitation des routes : 
+Voici le lien qui explicite la documentation des routes de nos API web : https://openpoeme.herokuapp.com/Swagger
+
 ## Model :
 - un modèle quotes <br/>
 - un modèle image <br/>

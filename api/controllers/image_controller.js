@@ -10,14 +10,17 @@ exports.image_by_id = function(req, res) {
     var results = Image.getById(id);
     // format the response according to user preferences (json, csv, xml ...)
     Image.getById(id).then(results =>
-      res.format({
+        res.format({
             'application/json': function () {
-        res.json(results);
-         } }),
-      res.format({
+                res.json([results]);
+            },
             'application/csv': function () {
-        res.csv(results);
-         } })
+                res.csv([results],true);
+            },
+            'application/xml': function () {
+                res.xmlparser([results]);
+            }
+        })
          );
     // res.json("testing");
 //   Request.get("https://jsonplaceholder.typicode.com/todos/2",
@@ -27,7 +30,7 @@ exports.image_by_id = function(req, res) {
 //         }
 //         var obj = JSON.parse(body);
 //         res.json(Image.getById(1));
-//     });  
+//     });
 };
 
 exports.image_by_theme = function(req, res) {
@@ -39,14 +42,5 @@ exports.image_by_theme = function(req, res) {
     Image.getByTheme(theme).then(results => res.json(results));
 
 };
-exports.image_all = function(req, res) {    
-    Request.get("https://jsonplaceholder.typicode.com/todos/2",
-      (error, response, body) => {
-          if(error) {
-              return console.dir(error);
-          }
-          var obj = JSON.parse(body);
-          res.json(obj.userId);
-      });  
-  };
+
 

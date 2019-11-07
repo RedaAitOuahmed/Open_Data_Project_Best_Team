@@ -3,14 +3,24 @@ module.exports = function(app) {
     var image_controller = require('../controllers/image_controller');
     var quotes_controller = require('../controllers/quotes_controller');
     var postalcard_controller = require('../controllers/postalcard_controller');
+    var fs = require('file-system');
 
-  // Image routes
+    app.get('/index', function(req,res) {
+        fs.readFile("./client/client.html", function(err, html) {
+            if(err){throw err;}
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(html)
+            res.end()
+        })
+
+    })
+
+
+    // Image routes
     app.route('/Images/getById/:id')
         .get(image_controller.image_by_id);
     app.route('/Images/getByTheme/:theme')
         .get(image_controller.image_by_theme);
-    app.route('/Images/')
-        .get(image_controller.image_all);
 
   // Quotes routes
   	app.route('/Quotes/author/:author')
