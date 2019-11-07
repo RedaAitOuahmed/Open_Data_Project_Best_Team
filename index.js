@@ -1,8 +1,15 @@
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000,
+const port = process.env.PORT || 3000
+
+var express = require('express')
+var csv = require('csv-express')
+var fs = require('file-system')
+var cors = require('cors')
+
+var  app = express()
+app.use(cors());
+
   //model = require('./api/models/model'), //we'll need it later
-  bodyParser = require('body-parser');
+var  bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
 app.use(bodyParser.urlencoded({ extended: true }));

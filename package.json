@@ -17,9 +17,15 @@
   },
   "homepage": "https://github.com/RedaAitOuahmed/Open_Data_Project_Best_Team#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "csv-express": "^1.2.2",
     "express": "^4.17.1",
+    "file-system": "^2.2.2",
+    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "save": "^2.4.0",
+    "xml": "^1.0.1"
   }
 }
