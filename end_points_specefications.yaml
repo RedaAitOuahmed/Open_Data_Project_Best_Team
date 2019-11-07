@@ -245,4 +245,8 @@ definitions:
 
 externalDocs:
   description: "Find out more about Swagger"
+<<<<<<< HEAD
   url: "http://swagger.io"
+=======
+  url: "http://swagger.io"
+>>>>>>> c3bc11a88e576ab4762c41e9dbfd2cef1682aa71

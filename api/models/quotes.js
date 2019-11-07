@@ -1,4 +1,9 @@
 var Request = require("request");
+var dash = require('lodash');
+
+function getQuotesObject(bigQuotesObject){
+    return dash.pick(bigQuotesObject, ['quote', 'author','likes','tags','language']);
+};
 
 module.exports = 
 {
@@ -10,7 +15,7 @@ module.exports =
       (
         {
         headers: {'content-type' : 'application/json',
-          'Authorization' : 'Token a77448f467c568cff8f3ae0244bcb21a322b6cab'
+          'Authorization' : 'Token 796d1d7a3b38cc92f24840af033b8b6f6d20506f'
         },
         url:     'https://api.paperquotes.com/apiv1/quotes/',
         qs:   {'author' : author }
@@ -21,7 +26,9 @@ module.exports =
           if (error) return reject(error);
           try {
               // JSON.parse() can throw an exception if not valid JSON
-              resolve(JSON.parse(body));
+              resolve(
+                        JSON.parse(body).results.map(x => getQuotesObject(x) )
+                    );
           } catch(e) {
               reject(e);
           }
@@ -31,6 +38,37 @@ module.exports =
   }
 };
   
-
+module.exports = 
+{
+  getByTags: function (tags) 
+  {
+    return new Promise(function(resolve, reject)
+    {
+      Request.get
+      (
+        {
+        headers: {'content-type' : 'application/json',
+          'Authorization' : 'Token 796d1d7a3b38cc92f24840af033b8b6f6d20506f'
+        },
+        url:     'https://api.paperquotes.com/apiv1/quotes/',
+        qs:   {'tags' : tags }
+        }, 
+        function(error, response, body)
+        {
+          // in addition to parsing the value, deal with possible errors
+          if (error) return reject(error);
+          try {
+              // JSON.parse() can throw an exception if not valid JSON
+              resolve(
+                        JSON.parse(body).results.map(x => getQuotesObject(x) )
+                    );
+          } catch(e) {
+              reject(e);
+          }
+        }
+      );
+    });
+  }
+};
 
 

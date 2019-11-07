@@ -1,24 +1,16 @@
 'use strict';
 
-var Image = require('../models/image')
+var Postalcard = require('../models/postalcard');
+var Quote = require('../models/quotes');
 
 
-exports.image_by_id = function(req, res) { 
-    // retrieve image id from request
-    var id = req.params.id;
+exports.random_postalcard = function(req, res) {
+    var random_tag = "woman";
+    var quote_promise = Quote.getByTags(random_tag);
     // call function get by id of Image model class 
-    var results = Image.getById(id);
+    var results_promise = quote_promise.then(quotes => Postalcard.getByQuote(quotes[0]));
     // format the response according to user preferences (json, csv, xml ...)
-    Image.getById(id).then(results =>
-      res.format({
-            'application/json': function () {
-        res.json(results);
-         } }),
-      res.format({
-            'application/csv': function () {
-        res.csv(results);
-         } })
-         );
+    results_promise.then(results => res.json(results));
     // res.json("testing");
 //   Request.get("https://jsonplaceholder.typicode.com/todos/2",
 //     (error, response, body) => {
