@@ -19,17 +19,17 @@ app.listen(port);
 app.get('/names', function(req,res) {
     res.format({
         'application/json': function () {
-            res.json(resu);
+            res.json(resultat);
         },
 
         'application/csv': function () {
-            res.csv();
-        }
+            res.csv(resultat);
+        },
 
         'application/xml': function () {
-            res.xml();
+            res.xml(resultat);
         }
     })
-})
+});
 
 console.log('todo list RESTful API server started on: ' + port);
