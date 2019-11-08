@@ -1,12 +1,11 @@
 # Open Data Project Best Team
 
 ## Jeux de données : 
-1- API poèmes : http://paperquotes.com/api-docs/#simple-usage <br/>
+1- API proverbes : http://paperquotes.com/api-docs/#simple-usage <br/>
 2- API images : https://pixabay.com/api/docs/#api_search_images <br/>
-3- API Text Processing : https://www.textrazor.com/ <br/>
 
 # Explicitation des routes : 
-Voici le lien qui explicite la documentation des routes de nos API web : https://openpoeme.herokuapp.com/Swagger
+Voici le lien qui explicite la documentation des routes de nos API web : https://openpoeme.herokuapp.com/what_we_offer
 
 ## Model :
 - un modèle quotes <br/>
@@ -14,8 +13,7 @@ Voici le lien qui explicite la documentation des routes de nos API web : https:/
 - un modèle carte postale <br/>
 
 ## Objectifs :
-On génère un poème. On associe 3 thèmes autour de ce poème (amour, tristesse...) choisit en fonction de ce qui s'approche le plus au poème. On associe une image à chaque thème et on ressort le tout en json, csv...
-
+On génère une carte postale en croisant un proverbe et une image. Le croisement se fait par l'un des tags du proverbe. On propose plusieurs endpoints qui sont détaillés ici :  https://openpoeme.herokuapp.com/what_we_offer
 
 ## Résultats :
-https://openpoeme.herokuapp.com/
+https://openpoeme.herokuapp.com/final_client
