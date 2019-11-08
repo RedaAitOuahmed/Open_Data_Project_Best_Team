@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Open Poèmes API</title>
+  <title>Postal card generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
@@ -751,9 +751,6 @@ margin-bottom: 20px;
       "type" : "string",
       "description" : "language of quote"
     }
-  },
-  "xml" : {
-    "name" : "Order"
   }
 };
   </script>
@@ -773,28 +770,28 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Images"><a href="#api-Images">API Methods - Images</a></li>
-                    <li data-group="Images" data-name="imagesIdGet" class="">
-                      <a href="#api-Images-imagesIdGet">imagesIdGet</a>
+                    <li data-group="Images" data-name="imagesGetByIdIdGet" class="">
+                      <a href="#api-Images-imagesGetByIdIdGet">imagesGetByIdIdGet</a>
                     </li>
-                    <li data-group="Images" data-name="imagesSearchGet" class="">
-                      <a href="#api-Images-imagesSearchGet">imagesSearchGet</a>
+                    <li data-group="Images" data-name="imagesGetByThemeThemeGet" class="">
+                      <a href="#api-Images-imagesGetByThemeThemeGet">imagesGetByThemeThemeGet</a>
                     </li>
                   <li class="nav-header" data-group="PostalCards"><a href="#api-PostalCards">API Methods - PostalCards</a></li>
-                    <li data-group="PostalCards" data-name="postalCardsIdGet" class="">
-                      <a href="#api-PostalCards-postalCardsIdGet">postalCardsIdGet</a>
+                    <li data-group="PostalCards" data-name="postalcardAuthorAuthorGet" class="">
+                      <a href="#api-PostalCards-postalcardAuthorAuthorGet">postalcardAuthorAuthorGet</a>
                     </li>
-                    <li data-group="PostalCards" data-name="postalCardsRandomGet" class="">
-                      <a href="#api-PostalCards-postalCardsRandomGet">postalCardsRandomGet</a>
+                    <li data-group="PostalCards" data-name="postalcardRandomGet" class="">
+                      <a href="#api-PostalCards-postalcardRandomGet">postalcardRandomGet</a>
                     </li>
-                    <li data-group="PostalCards" data-name="postalCardsSearchGet" class="">
-                      <a href="#api-PostalCards-postalCardsSearchGet">postalCardsSearchGet</a>
+                    <li data-group="PostalCards" data-name="postalcardTagsTagGet" class="">
+                      <a href="#api-PostalCards-postalcardTagsTagGet">postalcardTagsTagGet</a>
                     </li>
                   <li class="nav-header" data-group="Quotes"><a href="#api-Quotes">API Methods - Quotes</a></li>
-                    <li data-group="Quotes" data-name="quotesIdGet" class="">
-                      <a href="#api-Quotes-quotesIdGet">quotesIdGet</a>
+                    <li data-group="Quotes" data-name="quotesAuthorAuthorGet" class="">
+                      <a href="#api-Quotes-quotesAuthorAuthorGet">quotesAuthorAuthorGet</a>
                     </li>
-                    <li data-group="Quotes" data-name="quotesSearchGet" class="">
-                      <a href="#api-Quotes-quotesSearchGet">quotesSearchGet</a>
+                    <li data-group="Quotes" data-name="quotesTagsTagsGet" class="">
+                      <a href="#api-Quotes-quotesTagsTagsGet">quotesTagsTagsGet</a>
                     </li>
           </ul>
         </nav>
@@ -802,7 +799,7 @@ margin-bottom: 20px;
       <div id="content">
         <div id="project">
           <div class="pull-left">
-            <h1>Open Poèmes API</h1>
+            <h1>Postal card generator</h1>
           </div>
           <div class="clearfix"></div>
         </div>
@@ -811,16 +808,16 @@ margin-bottom: 20px;
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
               <div class="app-desc">Version: 1.0.0</div>
             <hr>
-            <div>Dans ce projet, on va récupérer des poèmes à l'aide d'une API. Par la suite, une deuxième API permet d'analyser le texte du poème et de sortir les thématiques les plus représentatives. Pour terminer, la troisième API associe à chaque thème une image. Voici en détail la fonctionnalité de chaque modèle.</div>
+            <div>Dans ce projet, on va récupérer des proverbes à l'aide d'une API. La deuxième API contient des images et le but final est de générer une carte postale avec une image et un proverbe. Chaque proverbe est défini par des tags qui permmettent d'associer une image correspondante. Voici en détails la description des modèles et des routes.</div>
           </div>
         </div>
         <div id="sections">
                 <section id="api-Images">
                   <h1>Images</h1>
-                    <div id="api-Images-imagesIdGet">
-                      <article id="api-Images-imagesIdGet-0" data-group="User" data-name="imagesIdGet" data-version="0">
+                    <div id="api-Images-imagesGetByIdIdGet">
+                      <article id="api-Images-imagesGetByIdIdGet-0" data-group="User" data-name="imagesGetByIdIdGet" data-version="0">
                         <div class="pull-left">
-                          <h1>imagesIdGet</h1>
+                          <h1>imagesGetByIdIdGet</h1>
                           <p>Recherche d&#39;une image par id</p>
                         </div>
                         <div class="pull-right"></div>
@@ -829,29 +826,29 @@ margin-bottom: 20px;
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Images/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Images/getById/{id}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Images-imagesIdGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Images-imagesIdGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Images-imagesIdGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Images-imagesIdGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Images-imagesGetByIdIdGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByIdIdGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Images-imagesIdGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/Images/{id}"</code></pre>
+                          <div class="tab-pane active" id="examples-Images-imagesGetByIdIdGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/Images/getById/{id}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Images-imagesIdGet-0-java">
+                          <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -867,17 +864,17 @@ public class ImagesApiExample {
         ImagesApi apiInstance = new ImagesApi();
         Integer id = 56; // Integer | image id
         try {
-            Image result = apiInstance.imagesIdGet(id);
+            Image result = apiInstance.imagesGetByIdIdGet(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ImagesApi#imagesIdGet");
+            System.err.println("Exception when calling ImagesApi#imagesGetByIdIdGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Images-imagesIdGet-0-android">
+                          <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ImagesApi;
 
 public class ImagesApiExample {
@@ -886,26 +883,26 @@ public class ImagesApiExample {
         ImagesApi apiInstance = new ImagesApi();
         Integer id = 56; // Integer | image id
         try {
-            Image result = apiInstance.imagesIdGet(id);
+            Image result = apiInstance.imagesGetByIdIdGet(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ImagesApi#imagesIdGet");
+            System.err.println("Exception when calling ImagesApi#imagesGetByIdIdGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Images-imagesIdGet-0-groovy">
+  <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-objc">
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // image id
 
 ImagesApi *apiInstance = [[ImagesApi alloc] init];
 
 // Recherche d'une image par id
-[apiInstance imagesIdGetWith:id
+[apiInstance imagesGetByIdIdGetWith:id
               completionHandler: ^(Image output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -917,10 +914,10 @@ ImagesApi *apiInstance = [[ImagesApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
 
-var api = new OpenPomesApi.ImagesApi()
+var api = new PostalCardGenerator.ImagesApi()
 
 var id = 56; // {Integer} image id
 
@@ -932,14 +929,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.imagesIdGet(id, callback);
+api.imagesGetByIdIdGet(id, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Images-imagesIdGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-csharp">
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -948,7 +945,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class imagesIdGetExample
+    public class imagesGetByIdIdGetExample
     {
         public void main()
         {
@@ -959,12 +956,12 @@ namespace Example
             try
             {
                 // Recherche d'une image par id
-                Image result = apiInstance.imagesIdGet(id);
+                Image result = apiInstance.imagesGetByIdIdGet(id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ImagesApi.imagesIdGet: " + e.Message );
+                Debug.Print("Exception when calling ImagesApi.imagesGetByIdIdGet: " + e.Message );
             }
         }
     }
@@ -972,7 +969,7 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-php">
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -980,15 +977,15 @@ $api_instance = new Swagger\Client\Api\ImagesApi();
 $id = 56; // Integer | image id
 
 try {
-    $result = $api_instance->imagesIdGet($id);
+    $result = $api_instance->imagesGetByIdIdGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ImagesApi->imagesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ImagesApi->imagesGetByIdIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-perl">
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::ImagesApi;
@@ -997,15 +994,15 @@ my $api_instance = WWW::SwaggerClient::ImagesApi->new();
 my $id = 56; # Integer | image id
 
 eval { 
-    my $result = $api_instance->imagesIdGet(id => $id);
+    my $result = $api_instance->imagesGetByIdIdGet(id => $id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ImagesApi->imagesIdGet: $@\n";
+    warn "Exception when calling ImagesApi->imagesGetByIdIdGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesIdGet-0-python">
+                            <div class="tab-pane" id="examples-Images-imagesGetByIdIdGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1018,10 +1015,10 @@ id = 56 # Integer | image id
 
 try: 
     # Recherche d'une image par id
-    api_response = api_instance.images_id_get(id)
+    api_response = api_instance.images_get_by_id_id_get(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImagesApi->imagesIdGet: %s\n" % e)</code></pre>
+    print("Exception when calling ImagesApi->imagesGetByIdIdGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1037,7 +1034,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_imagesIdGet_id">
+    <div id="d2e199_imagesGetByIdIdGet_id">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1067,14 +1064,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-imagesIdGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-imagesGetByIdIdGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-imagesIdGet-200-schema">
-                                  <div id='responses-imagesIdGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-imagesGetByIdIdGet-200-schema">
+                                  <div id='responses-imagesGetByIdIdGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1095,32 +1092,24 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-imagesIdGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-imagesIdGet-200-schema-200');
+                                        $('#responses-imagesGetByIdIdGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-imagesGetByIdIdGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-imagesIdGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-imagesGetByIdIdGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                            </div>
-
-                            <h3> Status: 400 - Invalide image id </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Images-imagesSearchGet">
-                      <article id="api-Images-imagesSearchGet-0" data-group="User" data-name="imagesSearchGet" data-version="0">
+                    <div id="api-Images-imagesGetByThemeThemeGet">
+                      <article id="api-Images-imagesGetByThemeThemeGet-0" data-group="User" data-name="imagesGetByThemeThemeGet" data-version="0">
                         <div class="pull-left">
-                          <h1>imagesSearchGet</h1>
+                          <h1>imagesGetByThemeThemeGet</h1>
                           <p>Recherche d&#39;une image</p>
                         </div>
                         <div class="pull-right"></div>
@@ -1129,29 +1118,29 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Images/search</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Images/getByTheme/{theme}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Images-imagesSearchGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Images-imagesSearchGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Images-imagesSearchGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Images-imagesSearchGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Images-imagesGetByThemeThemeGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Images-imagesGetByThemeThemeGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Images-imagesSearchGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/Images/search?search_field="</code></pre>
+                          <div class="tab-pane active" id="examples-Images-imagesGetByThemeThemeGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/Images/getByTheme/{theme}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Images-imagesSearchGet-0-java">
+                          <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1165,47 +1154,47 @@ public class ImagesApiExample {
     public static void main(String[] args) {
         
         ImagesApi apiInstance = new ImagesApi();
-        String searchField = searchField_example; // String | 
+        String theme = theme_example; // String | 
         try {
-            array[Image] result = apiInstance.imagesSearchGet(searchField);
+            array[Image] result = apiInstance.imagesGetByThemeThemeGet(theme);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ImagesApi#imagesSearchGet");
+            System.err.println("Exception when calling ImagesApi#imagesGetByThemeThemeGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Images-imagesSearchGet-0-android">
+                          <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ImagesApi;
 
 public class ImagesApiExample {
 
     public static void main(String[] args) {
         ImagesApi apiInstance = new ImagesApi();
-        String searchField = searchField_example; // String | 
+        String theme = theme_example; // String | 
         try {
-            array[Image] result = apiInstance.imagesSearchGet(searchField);
+            array[Image] result = apiInstance.imagesGetByThemeThemeGet(theme);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ImagesApi#imagesSearchGet");
+            System.err.println("Exception when calling ImagesApi#imagesGetByThemeThemeGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Images-imagesSearchGet-0-groovy">
+  <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *searchField = searchField_example; //  (optional)
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *theme = theme_example; // 
 
 ImagesApi *apiInstance = [[ImagesApi alloc] init];
 
 // Recherche d'une image
-[apiInstance imagesSearchGetWith:searchField
+[apiInstance imagesGetByThemeThemeGetWith:theme
               completionHandler: ^(array[Image] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -1217,14 +1206,13 @@ ImagesApi *apiInstance = [[ImagesApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
 
-var api = new OpenPomesApi.ImagesApi()
+var api = new PostalCardGenerator.ImagesApi()
 
-var opts = { 
-  'searchField': searchField_example // {String} 
-};
+var theme = theme_example; // {String} 
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1233,14 +1221,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.imagesSearchGet(opts, callback);
+api.imagesGetByThemeThemeGet(theme, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Images-imagesSearchGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-csharp">
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1249,23 +1237,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class imagesSearchGetExample
+    public class imagesGetByThemeThemeGetExample
     {
         public void main()
         {
             
             var apiInstance = new ImagesApi();
-            var searchField = searchField_example;  // String |  (optional) 
+            var theme = theme_example;  // String | 
 
             try
             {
                 // Recherche d'une image
-                array[Image] result = apiInstance.imagesSearchGet(searchField);
+                array[Image] result = apiInstance.imagesGetByThemeThemeGet(theme);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ImagesApi.imagesSearchGet: " + e.Message );
+                Debug.Print("Exception when calling ImagesApi.imagesGetByThemeThemeGet: " + e.Message );
             }
         }
     }
@@ -1273,40 +1261,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-php">
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\ImagesApi();
-$searchField = searchField_example; // String | 
+$theme = theme_example; // String | 
 
 try {
-    $result = $api_instance->imagesSearchGet($searchField);
+    $result = $api_instance->imagesGetByThemeThemeGet($theme);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ImagesApi->imagesSearchGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ImagesApi->imagesGetByThemeThemeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-perl">
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::ImagesApi;
 
 my $api_instance = WWW::SwaggerClient::ImagesApi->new();
-my $searchField = searchField_example; # String | 
+my $theme = theme_example; # String | 
 
 eval { 
-    my $result = $api_instance->imagesSearchGet(searchField => $searchField);
+    my $result = $api_instance->imagesGetByThemeThemeGet(theme => $theme);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ImagesApi->imagesSearchGet: $@\n";
+    warn "Exception when calling ImagesApi->imagesGetByThemeThemeGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Images-imagesSearchGet-0-python">
+                            <div class="tab-pane" id="examples-Images-imagesGetByThemeThemeGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1315,34 +1303,30 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.ImagesApi()
-searchField = searchField_example # String |  (optional)
+theme = theme_example # String | 
 
 try: 
     # Recherche d'une image
-    api_response = api_instance.images_search_get(searchField=searchField)
+    api_response = api_instance.images_get_by_theme_theme_get(theme)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImagesApi->imagesSearchGet: %s\n" % e)</code></pre>
+    print("Exception when calling ImagesApi->imagesGetByThemeThemeGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
                           <h2>Parameters</h2>
 
-
-
-
-
-                            <div class="methodsubtabletitle">Query parameters</div>
+                            <div class="methodsubtabletitle">Path parameters</div>
                             <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">search_field</td>
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">theme*</td>
 <td>
 
 
-    <div id="d2e199_imagesSearchGet_searchField">
+    <div id="d2e199_imagesGetByThemeThemeGet_theme">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1350,6 +1334,9 @@ except ApiException as e:
                 </span>
 
             </div>
+                <div class="inner required">
+                    Required
+                </div>
         </div>
     </div>
 </td>
@@ -1357,19 +1344,23 @@ except ApiException as e:
 
                             </table>
 
+
+
+
+
                           <h2>Responses</h2>
                             <h3> Status: 200 - Images exists  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-imagesSearchGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-imagesGetByThemeThemeGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-imagesSearchGet-200-schema">
-                                  <div id='responses-imagesSearchGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-imagesGetByThemeThemeGet-200-schema">
+                                  <div id='responses-imagesGetByThemeThemeGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1393,23 +1384,15 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-imagesSearchGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-imagesSearchGet-200-schema-200');
+                                        $('#responses-imagesGetByThemeThemeGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-imagesGetByThemeThemeGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-imagesSearchGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-imagesGetByThemeThemeGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                            </div>
-
-                            <h3> Status: 400 - Invalide search term insérer </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
                         </article>
@@ -1418,11 +1401,11 @@ except ApiException as e:
                   </section>
                 <section id="api-PostalCards">
                   <h1>PostalCards</h1>
-                    <div id="api-PostalCards-postalCardsIdGet">
-                      <article id="api-PostalCards-postalCardsIdGet-0" data-group="User" data-name="postalCardsIdGet" data-version="0">
+                    <div id="api-PostalCards-postalcardAuthorAuthorGet">
+                      <article id="api-PostalCards-postalcardAuthorAuthorGet-0" data-group="User" data-name="postalcardAuthorAuthorGet" data-version="0">
                         <div class="pull-left">
-                          <h1>postalCardsIdGet</h1>
-                          <p>Recherche d&#39;une carte postale par id</p>
+                          <h1>postalcardAuthorAuthorGet</h1>
+                          <p>Get a postal card by quote author or quote tag</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
@@ -1430,29 +1413,29 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/PostalCards/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/postalcard/author/{author}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-PostalCards-postalCardsIdGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsIdGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardAuthorAuthorGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-PostalCards-postalCardsIdGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/PostalCards/{id}"</code></pre>
+                          <div class="tab-pane active" id="examples-PostalCards-postalcardAuthorAuthorGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/postalcard/author/{author}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-java">
+                          <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -1466,48 +1449,48 @@ public class PostalCardsApiExample {
     public static void main(String[] args) {
         
         PostalCardsApi apiInstance = new PostalCardsApi();
-        Integer id = 56; // Integer | quote id
+        String author = author_example; // String | Donnez un auteur
         try {
-            PostalCard result = apiInstance.postalCardsIdGet(id);
+            array[PostalCard] result = apiInstance.postalcardAuthorAuthorGet(author);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsIdGet");
+            System.err.println("Exception when calling PostalCardsApi#postalcardAuthorAuthorGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-android">
+                          <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostalCardsApi;
 
 public class PostalCardsApiExample {
 
     public static void main(String[] args) {
         PostalCardsApi apiInstance = new PostalCardsApi();
-        Integer id = 56; // Integer | quote id
+        String author = author_example; // String | Donnez un auteur
         try {
-            PostalCard result = apiInstance.postalCardsIdGet(id);
+            array[PostalCard] result = apiInstance.postalcardAuthorAuthorGet(author);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsIdGet");
+            System.err.println("Exception when calling PostalCardsApi#postalcardAuthorAuthorGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-groovy">
+  <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // quote id
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *author = author_example; // Donnez un auteur
 
 PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
 
-// Recherche d'une carte postale par id
-[apiInstance postalCardsIdGetWith:id
-              completionHandler: ^(PostalCard output, NSError* error) {
+// Get a postal card by quote author or quote tag
+[apiInstance postalcardAuthorAuthorGetWith:author
+              completionHandler: ^(array[PostalCard] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1518,12 +1501,12 @@ PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
 
-var api = new OpenPomesApi.PostalCardsApi()
+var api = new PostalCardGenerator.PostalCardsApi()
 
-var id = 56; // {Integer} quote id
+var author = author_example; // {String} Donnez un auteur
 
 
 var callback = function(error, data, response) {
@@ -1533,14 +1516,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.postalCardsIdGet(id, callback);
+api.postalcardAuthorAuthorGet(author, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-csharp">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1549,23 +1532,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class postalCardsIdGetExample
+    public class postalcardAuthorAuthorGetExample
     {
         public void main()
         {
             
             var apiInstance = new PostalCardsApi();
-            var id = 56;  // Integer | quote id
+            var author = author_example;  // String | Donnez un auteur
 
             try
             {
-                // Recherche d'une carte postale par id
-                PostalCard result = apiInstance.postalCardsIdGet(id);
+                // Get a postal card by quote author or quote tag
+                array[PostalCard] result = apiInstance.postalcardAuthorAuthorGet(author);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling PostalCardsApi.postalCardsIdGet: " + e.Message );
+                Debug.Print("Exception when calling PostalCardsApi.postalcardAuthorAuthorGet: " + e.Message );
             }
         }
     }
@@ -1573,40 +1556,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-php">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\PostalCardsApi();
-$id = 56; // Integer | quote id
+$author = author_example; // String | Donnez un auteur
 
 try {
-    $result = $api_instance->postalCardsIdGet($id);
+    $result = $api_instance->postalcardAuthorAuthorGet($author);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PostalCardsApi->postalCardsIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PostalCardsApi->postalcardAuthorAuthorGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-perl">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::PostalCardsApi;
 
 my $api_instance = WWW::SwaggerClient::PostalCardsApi->new();
-my $id = 56; # Integer | quote id
+my $author = author_example; # String | Donnez un auteur
 
 eval { 
-    my $result = $api_instance->postalCardsIdGet(id => $id);
+    my $result = $api_instance->postalcardAuthorAuthorGet(author => $author);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling PostalCardsApi->postalCardsIdGet: $@\n";
+    warn "Exception when calling PostalCardsApi->postalcardAuthorAuthorGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsIdGet-0-python">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardAuthorAuthorGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1615,14 +1598,14 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.PostalCardsApi()
-id = 56 # Integer | quote id
+author = author_example # String | Donnez un auteur
 
 try: 
-    # Recherche d'une carte postale par id
-    api_response = api_instance.postal_cards_id_get(id)
+    # Get a postal card by quote author or quote tag
+    api_response = api_instance.postalcard_author_author_get(author)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PostalCardsApi->postalCardsIdGet: %s\n" % e)</code></pre>
+    print("Exception when calling PostalCardsApi->postalcardAuthorAuthorGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1634,19 +1617,19 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">id*</td>
+                                  <tr><td style="width:150px;">author*</td>
 <td>
 
 
-    <div id="d2e199_postalCardsIdGet_id">
+    <div id="d2e199_postalcardAuthorAuthorGet_author">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
-                    Integer
+                    String
                 </span>
 
                     <div class="inner description">
-                        quote id
+                        Donnez un auteur
                     </div>
             </div>
                 <div class="inner required">
@@ -1664,605 +1647,18 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - postal card exists  </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-postalCardsIdGet-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-postalCardsIdGet-200-schema">
-                                  <div id='responses-postalCardsIdGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "postal card exists ",
-  "schema" : {
-    "$ref" : "#/definitions/PostalCard"
-  }
-};
-                                        var schema = schemaWrapper.schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = defs;
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-postalCardsIdGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-postalCardsIdGet-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-postalCardsIdGet-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                            <h3> Status: 400 - Invalide postal card id </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                    <div id="api-PostalCards-postalCardsRandomGet">
-                      <article id="api-PostalCards-postalCardsRandomGet-0" data-group="User" data-name="postalCardsRandomGet" data-version="0">
-                        <div class="pull-left">
-                          <h1>postalCardsRandomGet</h1>
-                          <p>Get a random postal card</p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked"></p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/PostalCards/random</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-PostalCards-postalCardsRandomGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsRandomGet-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-PostalCards-postalCardsRandomGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/PostalCards/random"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.PostalCardsApi;
-
-import java.io.File;
-import java.util.*;
-
-public class PostalCardsApiExample {
-
-    public static void main(String[] args) {
-        
-        PostalCardsApi apiInstance = new PostalCardsApi();
-        try {
-            PostalCard result = apiInstance.postalCardsRandomGet();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsRandomGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostalCardsApi;
-
-public class PostalCardsApiExample {
-
-    public static void main(String[] args) {
-        PostalCardsApi apiInstance = new PostalCardsApi();
-        try {
-            PostalCard result = apiInstance.postalCardsRandomGet();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsRandomGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
-PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
-
-// Get a random postal card
-[apiInstance postalCardsRandomGetWithCompletionHandler: 
-              ^(PostalCard output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
-
-var api = new OpenPomesApi.PostalCardsApi()
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.postalCardsRandomGet(callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class postalCardsRandomGetExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new PostalCardsApi();
-
-            try
-            {
-                // Get a random postal card
-                PostalCard result = apiInstance.postalCardsRandomGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling PostalCardsApi.postalCardsRandomGet: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\PostalCardsApi();
-
-try {
-    $result = $api_instance->postalCardsRandomGet();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PostalCardsApi->postalCardsRandomGet: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::PostalCardsApi;
-
-my $api_instance = WWW::SwaggerClient::PostalCardsApi->new();
-
-eval { 
-    my $result = $api_instance->postalCardsRandomGet();
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling PostalCardsApi->postalCardsRandomGet: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsRandomGet-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.PostalCardsApi()
-
-try: 
-    # Get a random postal card
-    api_response = api_instance.postal_cards_random_get()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PostalCardsApi->postalCardsRandomGet: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-
-
-
-                          <h2>Responses</h2>
-                            <h3> Status: 200 - a postal card exists  </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                                <li class="active">
-                                  <a data-toggle="tab" href="#responses-postalCardsRandomGet-200-schema">Schema</a>
-                                </li>
-
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-postalCardsRandomGet-200-schema">
-                                  <div id='responses-postalCardsRandomGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
-                                    <script>
-                                      $(document).ready(function() {
-                                        var schemaWrapper = {
-  "description" : "a postal card exists ",
-  "schema" : {
-    "$ref" : "#/definitions/PostalCard"
-  }
-};
-                                        var schema = schemaWrapper.schema;
-                                        if (schema.$ref != null) {
-                                          schema = defsParser.$refs.get(schema.$ref);
-                                        } else {
-                                          schemaWrapper.definitions = defs;
-                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
-                                            console.log(err);
-                                          });
-                                        }
-
-                                        //console.log(JSON.stringify(schema));
-                                        var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-postalCardsRandomGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-postalCardsRandomGet-200-schema-200');
-                                        result.empty();
-                                        result.append(view.render());
-                                      });
-                                    </script>
-                                  </div>
-                                  <input id='responses-postalCardsRandomGet-200-schema-data' type='hidden' value=''></input>
-                                </div>
-                            </div>
-
-                            <h3> Status: 400 - No postal card id </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                    <div id="api-PostalCards-postalCardsSearchGet">
-                      <article id="api-PostalCards-postalCardsSearchGet-0" data-group="User" data-name="postalCardsSearchGet" data-version="0">
-                        <div class="pull-left">
-                          <h1>postalCardsSearchGet</h1>
-                          <p>Get a postal card by quote author or quote tag</p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked"></p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/PostalCards/search</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-PostalCards-postalCardsSearchGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-PostalCards-postalCardsSearchGet-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-PostalCards-postalCardsSearchGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/PostalCards/search?author=&tag="</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.PostalCardsApi;
-
-import java.io.File;
-import java.util.*;
-
-public class PostalCardsApiExample {
-
-    public static void main(String[] args) {
-        
-        PostalCardsApi apiInstance = new PostalCardsApi();
-        String author = author_example; // String | Donnez un auteur
-        String tag = tag_example; // String | Donnez un thème
-        try {
-            array[PostalCard] result = apiInstance.postalCardsSearchGet(author, tag);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsSearchGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostalCardsApi;
-
-public class PostalCardsApiExample {
-
-    public static void main(String[] args) {
-        PostalCardsApi apiInstance = new PostalCardsApi();
-        String author = author_example; // String | Donnez un auteur
-        String tag = tag_example; // String | Donnez un thème
-        try {
-            array[PostalCard] result = apiInstance.postalCardsSearchGet(author, tag);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PostalCardsApi#postalCardsSearchGet");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *author = author_example; // Donnez un auteur (optional)
-String *tag = tag_example; // Donnez un thème (optional)
-
-PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
-
-// Get a postal card by quote author or quote tag
-[apiInstance postalCardsSearchGetWith:author
-    tag:tag
-              completionHandler: ^(array[PostalCard] output, NSError* error) {
-                            if (output) {
-                                NSLog(@"%@", output);
-                            }
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
-
-var api = new OpenPomesApi.PostalCardsApi()
-
-var opts = { 
-  'author': author_example, // {String} Donnez un auteur
-  'tag': tag_example // {String} Donnez un thème
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.postalCardsSearchGet(opts, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class postalCardsSearchGetExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new PostalCardsApi();
-            var author = author_example;  // String | Donnez un auteur (optional) 
-            var tag = tag_example;  // String | Donnez un thème (optional) 
-
-            try
-            {
-                // Get a postal card by quote author or quote tag
-                array[PostalCard] result = apiInstance.postalCardsSearchGet(author, tag);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling PostalCardsApi.postalCardsSearchGet: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\PostalCardsApi();
-$author = author_example; // String | Donnez un auteur
-$tag = tag_example; // String | Donnez un thème
-
-try {
-    $result = $api_instance->postalCardsSearchGet($author, $tag);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PostalCardsApi->postalCardsSearchGet: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::PostalCardsApi;
-
-my $api_instance = WWW::SwaggerClient::PostalCardsApi->new();
-my $author = author_example; # String | Donnez un auteur
-my $tag = tag_example; # String | Donnez un thème
-
-eval { 
-    my $result = $api_instance->postalCardsSearchGet(author => $author, tag => $tag);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling PostalCardsApi->postalCardsSearchGet: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-PostalCards-postalCardsSearchGet-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.PostalCardsApi()
-author = author_example # String | Donnez un auteur (optional)
-tag = tag_example # String | Donnez un thème (optional)
-
-try: 
-    # Get a postal card by quote author or quote tag
-    api_response = api_instance.postal_cards_search_get(author=author, tag=tag)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PostalCardsApi->postalCardsSearchGet: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-
-
-                            <div class="methodsubtabletitle">Query parameters</div>
-                            <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">author</td>
-<td>
-
-
-    <div id="d2e199_postalCardsSearchGet_author">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description">
-                        Donnez un auteur
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                                <tr><td style="width:150px;">tag</td>
-<td>
-
-
-    <div id="d2e199_postalCardsSearchGet_tag">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description">
-                        Donnez un thème
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                            </table>
-
-                          <h2>Responses</h2>
                             <h3> Status: 200 - author/tag exists  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-postalCardsSearchGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-postalcardAuthorAuthorGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-postalCardsSearchGet-200-schema">
-                                  <div id='responses-postalCardsSearchGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-postalcardAuthorAuthorGet-200-schema">
+                                  <div id='responses-postalcardAuthorAuthorGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2286,36 +1682,25 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-postalCardsSearchGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-postalCardsSearchGet-200-schema-200');
+                                        $('#responses-postalcardAuthorAuthorGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-postalcardAuthorAuthorGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-postalCardsSearchGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-postalcardAuthorAuthorGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                            </div>
-
-                            <h3> Status: 400 - Invalide auteur/tag insérer </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                  </section>
-                <section id="api-Quotes">
-                  <h1>Quotes</h1>
-                    <div id="api-Quotes-quotesIdGet">
-                      <article id="api-Quotes-quotesIdGet-0" data-group="User" data-name="quotesIdGet" data-version="0">
+                    <div id="api-PostalCards-postalcardRandomGet">
+                      <article id="api-PostalCards-postalcardRandomGet-0" data-group="User" data-name="postalcardRandomGet" data-version="0">
                         <div class="pull-left">
-                          <h1>quotesIdGet</h1>
-                          <p>Recherche d&#39;un poème par id</p>
+                          <h1>postalcardRandomGet</h1>
+                          <p>Get a random postal card</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
@@ -2323,84 +1708,81 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Quotes/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/postalcard/random</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Quotes-quotesIdGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Quotes-quotesIdGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Quotes-quotesIdGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesIdGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-PostalCards-postalcardRandomGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardRandomGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Quotes-quotesIdGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/Quotes/{id}"</code></pre>
+                          <div class="tab-pane active" id="examples-PostalCards-postalcardRandomGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/postalcard/random"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-java">
+                          <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.QuotesApi;
+import io.swagger.client.api.PostalCardsApi;
 
 import java.io.File;
 import java.util.*;
 
-public class QuotesApiExample {
+public class PostalCardsApiExample {
 
     public static void main(String[] args) {
         
-        QuotesApi apiInstance = new QuotesApi();
-        Integer id = 56; // Integer | quote id
+        PostalCardsApi apiInstance = new PostalCardsApi();
         try {
-            Quote result = apiInstance.quotesIdGet(id);
+            PostalCard result = apiInstance.postalcardRandomGet();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling QuotesApi#quotesIdGet");
+            System.err.println("Exception when calling PostalCardsApi#postalcardRandomGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.QuotesApi;
+                          <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostalCardsApi;
 
-public class QuotesApiExample {
+public class PostalCardsApiExample {
 
     public static void main(String[] args) {
-        QuotesApi apiInstance = new QuotesApi();
-        Integer id = 56; // Integer | quote id
+        PostalCardsApi apiInstance = new PostalCardsApi();
         try {
-            Quote result = apiInstance.quotesIdGet(id);
+            PostalCard result = apiInstance.postalcardRandomGet();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling QuotesApi#quotesIdGet");
+            System.err.println("Exception when calling PostalCardsApi#postalcardRandomGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-groovy">
+  <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // quote id
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">
+PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
 
-QuotesApi *apiInstance = [[QuotesApi alloc] init];
-
-// Recherche d'un poème par id
-[apiInstance quotesIdGetWith:id
-              completionHandler: ^(Quote output, NSError* error) {
+// Get a random postal card
+[apiInstance postalcardRandomGetWithCompletionHandler: 
+              ^(PostalCard output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -2411,12 +1793,267 @@ QuotesApi *apiInstance = [[QuotesApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
 
-var api = new OpenPomesApi.QuotesApi()
+var api = new PostalCardGenerator.PostalCardsApi()
 
-var id = 56; // {Integer} quote id
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.postalcardRandomGet(callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class postalcardRandomGetExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new PostalCardsApi();
+
+            try
+            {
+                // Get a random postal card
+                PostalCard result = apiInstance.postalcardRandomGet();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PostalCardsApi.postalcardRandomGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\PostalCardsApi();
+
+try {
+    $result = $api_instance->postalcardRandomGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PostalCardsApi->postalcardRandomGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::PostalCardsApi;
+
+my $api_instance = WWW::SwaggerClient::PostalCardsApi->new();
+
+eval { 
+    my $result = $api_instance->postalcardRandomGet();
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling PostalCardsApi->postalcardRandomGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-PostalCards-postalcardRandomGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.PostalCardsApi()
+
+try: 
+    # Get a random postal card
+    api_response = api_instance.postalcard_random_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PostalCardsApi->postalcardRandomGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - a postal card exists  </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-postalcardRandomGet-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-postalcardRandomGet-200-schema">
+                                  <div id='responses-postalcardRandomGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "a postal card exists ",
+  "schema" : {
+    "$ref" : "#/definitions/PostalCard"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-postalcardRandomGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-postalcardRandomGet-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-postalcardRandomGet-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-PostalCards-postalcardTagsTagGet">
+                      <article id="api-PostalCards-postalcardTagsTagGet-0" data-group="User" data-name="postalcardTagsTagGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>postalcardTagsTagGet</h1>
+                          <p>Recherche d&#39;une carte postale par id</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/postalcard/tags/{tag}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-PostalCards-postalcardTagsTagGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-PostalCards-postalcardTagsTagGet-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-PostalCards-postalcardTagsTagGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/postalcard/tags/{tag}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.PostalCardsApi;
+
+import java.io.File;
+import java.util.*;
+
+public class PostalCardsApiExample {
+
+    public static void main(String[] args) {
+        
+        PostalCardsApi apiInstance = new PostalCardsApi();
+        Integer tag = 56; // Integer | quote tags
+        try {
+            PostalCard result = apiInstance.postalcardTagsTagGet(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PostalCardsApi#postalcardTagsTagGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.PostalCardsApi;
+
+public class PostalCardsApiExample {
+
+    public static void main(String[] args) {
+        PostalCardsApi apiInstance = new PostalCardsApi();
+        Integer tag = 56; // Integer | quote tags
+        try {
+            PostalCard result = apiInstance.postalcardTagsTagGet(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PostalCardsApi#postalcardTagsTagGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Integer *tag = 56; // quote tags
+
+PostalCardsApi *apiInstance = [[PostalCardsApi alloc] init];
+
+// Recherche d'une carte postale par id
+[apiInstance postalcardTagsTagGetWith:tag
+              completionHandler: ^(PostalCard output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
+
+var api = new PostalCardGenerator.PostalCardsApi()
+
+var tag = 56; // {Integer} quote tags
 
 
 var callback = function(error, data, response) {
@@ -2426,14 +2063,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.quotesIdGet(id, callback);
+api.postalcardTagsTagGet(tag, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Quotes-quotesIdGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-csharp">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2442,23 +2079,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class quotesIdGetExample
+    public class postalcardTagsTagGetExample
     {
         public void main()
         {
             
-            var apiInstance = new QuotesApi();
-            var id = 56;  // Integer | quote id
+            var apiInstance = new PostalCardsApi();
+            var tag = 56;  // Integer | quote tags
 
             try
             {
-                // Recherche d'un poème par id
-                Quote result = apiInstance.quotesIdGet(id);
+                // Recherche d'une carte postale par id
+                PostalCard result = apiInstance.postalcardTagsTagGet(tag);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling QuotesApi.quotesIdGet: " + e.Message );
+                Debug.Print("Exception when calling PostalCardsApi.postalcardTagsTagGet: " + e.Message );
             }
         }
     }
@@ -2466,40 +2103,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-php">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\QuotesApi();
-$id = 56; // Integer | quote id
+$api_instance = new Swagger\Client\Api\PostalCardsApi();
+$tag = 56; // Integer | quote tags
 
 try {
-    $result = $api_instance->quotesIdGet($id);
+    $result = $api_instance->postalcardTagsTagGet($tag);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling QuotesApi->quotesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PostalCardsApi->postalcardTagsTagGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-perl">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::QuotesApi;
+use WWW::SwaggerClient::PostalCardsApi;
 
-my $api_instance = WWW::SwaggerClient::QuotesApi->new();
-my $id = 56; # Integer | quote id
+my $api_instance = WWW::SwaggerClient::PostalCardsApi->new();
+my $tag = 56; # Integer | quote tags
 
 eval { 
-    my $result = $api_instance->quotesIdGet(id => $id);
+    my $result = $api_instance->postalcardTagsTagGet(tag => $tag);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling QuotesApi->quotesIdGet: $@\n";
+    warn "Exception when calling PostalCardsApi->postalcardTagsTagGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesIdGet-0-python">
+                            <div class="tab-pane" id="examples-PostalCards-postalcardTagsTagGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2507,15 +2144,15 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.QuotesApi()
-id = 56 # Integer | quote id
+api_instance = swagger_client.PostalCardsApi()
+tag = 56 # Integer | quote tags
 
 try: 
-    # Recherche d'un poème par id
-    api_response = api_instance.quotes_id_get(id)
+    # Recherche d'une carte postale par id
+    api_response = api_instance.postalcard_tags_tag_get(tag)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuotesApi->quotesIdGet: %s\n" % e)</code></pre>
+    print("Exception when calling PostalCardsApi->postalcardTagsTagGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2527,11 +2164,11 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">id*</td>
+                                  <tr><td style="width:150px;">tag*</td>
 <td>
 
 
-    <div id="d2e199_quotesIdGet_id">
+    <div id="d2e199_postalcardTagsTagGet_tag">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -2539,7 +2176,7 @@ except ApiException as e:
                 </span>
 
                     <div class="inner description">
-                        quote id
+                        quote tags
                     </div>
             </div>
                 <div class="inner required">
@@ -2557,24 +2194,24 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - quote exists  </h3>
+                            <h3> Status: 200 - postal card exists  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-quotesIdGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-postalcardTagsTagGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-quotesIdGet-200-schema">
-                                  <div id='responses-quotesIdGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-postalcardTagsTagGet-200-schema">
+                                  <div id='responses-postalcardTagsTagGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
-  "description" : "quote exists ",
+  "description" : "postal card exists ",
   "schema" : {
-    "$ref" : "#/definitions/Quote"
+    "$ref" : "#/definitions/PostalCard"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -2589,33 +2226,28 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-quotesIdGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-quotesIdGet-200-schema-200');
+                                        $('#responses-postalcardTagsTagGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-postalcardTagsTagGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-quotesIdGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-postalcardTagsTagGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
-                            </div>
-
-                            <h3> Status: 400 - Invalide quote id </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Quotes-quotesSearchGet">
-                      <article id="api-Quotes-quotesSearchGet-0" data-group="User" data-name="quotesSearchGet" data-version="0">
+                  </section>
+                <section id="api-Quotes">
+                  <h1>Quotes</h1>
+                    <div id="api-Quotes-quotesAuthorAuthorGet">
+                      <article id="api-Quotes-quotesAuthorAuthorGet-0" data-group="User" data-name="quotesAuthorAuthorGet" data-version="0">
                         <div class="pull-left">
-                          <h1>quotesSearchGet</h1>
-                          <p>Recherche d&#39;un poème</p>
+                          <h1>quotesAuthorAuthorGet</h1>
+                          <p>Recherche d&#39;un proverbe par auteur</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
@@ -2623,29 +2255,29 @@ except ApiException as e:
                         <p class="marked"></p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Quotes/search</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Quotes/author/{author}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Quotes-quotesSearchGet-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Quotes-quotesSearchGet-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Quotes-quotesSearchGet-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Quotes-quotesSearchGet-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Quotes-quotesAuthorAuthorGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesAuthorAuthorGet-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Quotes-quotesSearchGet-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/v2/Quotes/search?author=&tag="</code></pre>
+                          <div class="tab-pane active" id="examples-Quotes-quotesAuthorAuthorGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/Quotes/author/{author}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-java">
+                          <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
@@ -2660,19 +2292,18 @@ public class QuotesApiExample {
         
         QuotesApi apiInstance = new QuotesApi();
         String author = author_example; // String | Donnez un auteur
-        String tag = tag_example; // String | Donnez un thème
         try {
-            array[Quote] result = apiInstance.quotesSearchGet(author, tag);
+            array[Quote] result = apiInstance.quotesAuthorAuthorGet(author);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling QuotesApi#quotesSearchGet");
+            System.err.println("Exception when calling QuotesApi#quotesAuthorAuthorGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-android">
+                          <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-android">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.QuotesApi;
 
 public class QuotesApiExample {
@@ -2680,30 +2311,27 @@ public class QuotesApiExample {
     public static void main(String[] args) {
         QuotesApi apiInstance = new QuotesApi();
         String author = author_example; // String | Donnez un auteur
-        String tag = tag_example; // String | Donnez un thème
         try {
-            array[Quote] result = apiInstance.quotesSearchGet(author, tag);
+            array[Quote] result = apiInstance.quotesAuthorAuthorGet(author);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling QuotesApi#quotesSearchGet");
+            System.err.println("Exception when calling QuotesApi#quotesAuthorAuthorGet");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-groovy">
+  <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *author = author_example; // Donnez un auteur (optional)
-String *tag = tag_example; // Donnez un thème (optional)
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *author = author_example; // Donnez un auteur
 
 QuotesApi *apiInstance = [[QuotesApi alloc] init];
 
-// Recherche d'un poème
-[apiInstance quotesSearchGetWith:author
-    tag:tag
+// Recherche d'un proverbe par auteur
+[apiInstance quotesAuthorAuthorGetWith:author
               completionHandler: ^(array[Quote] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -2715,15 +2343,13 @@ QuotesApi *apiInstance = [[QuotesApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var OpenPomesApi = require('open_pomes_api');
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
 
-var api = new OpenPomesApi.QuotesApi()
+var api = new PostalCardGenerator.QuotesApi()
 
-var opts = { 
-  'author': author_example, // {String} Donnez un auteur
-  'tag': tag_example // {String} Donnez un thème
-};
+var author = author_example; // {String} Donnez un auteur
+
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2732,14 +2358,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.quotesSearchGet(opts, callback);
+api.quotesAuthorAuthorGet(author, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-angular">
+                            <!--<div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-csharp">
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2748,24 +2374,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class quotesSearchGetExample
+    public class quotesAuthorAuthorGetExample
     {
         public void main()
         {
             
             var apiInstance = new QuotesApi();
-            var author = author_example;  // String | Donnez un auteur (optional) 
-            var tag = tag_example;  // String | Donnez un thème (optional) 
+            var author = author_example;  // String | Donnez un auteur
 
             try
             {
-                // Recherche d'un poème
-                array[Quote] result = apiInstance.quotesSearchGet(author, tag);
+                // Recherche d'un proverbe par auteur
+                array[Quote] result = apiInstance.quotesAuthorAuthorGet(author);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling QuotesApi.quotesSearchGet: " + e.Message );
+                Debug.Print("Exception when calling QuotesApi.quotesAuthorAuthorGet: " + e.Message );
             }
         }
     }
@@ -2773,42 +2398,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-php">
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\QuotesApi();
 $author = author_example; // String | Donnez un auteur
-$tag = tag_example; // String | Donnez un thème
 
 try {
-    $result = $api_instance->quotesSearchGet($author, $tag);
+    $result = $api_instance->quotesAuthorAuthorGet($author);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling QuotesApi->quotesSearchGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling QuotesApi->quotesAuthorAuthorGet: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-perl">
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::QuotesApi;
 
 my $api_instance = WWW::SwaggerClient::QuotesApi->new();
 my $author = author_example; # String | Donnez un auteur
-my $tag = tag_example; # String | Donnez un thème
 
 eval { 
-    my $result = $api_instance->quotesSearchGet(author => $author, tag => $tag);
+    my $result = $api_instance->quotesAuthorAuthorGet(author => $author);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling QuotesApi->quotesSearchGet: $@\n";
+    warn "Exception when calling QuotesApi->quotesAuthorAuthorGet: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Quotes-quotesSearchGet-0-python">
+                            <div class="tab-pane" id="examples-Quotes-quotesAuthorAuthorGet-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2817,35 +2440,30 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.QuotesApi()
-author = author_example # String | Donnez un auteur (optional)
-tag = tag_example # String | Donnez un thème (optional)
+author = author_example # String | Donnez un auteur
 
 try: 
-    # Recherche d'un poème
-    api_response = api_instance.quotes_search_get(author=author, tag=tag)
+    # Recherche d'un proverbe par auteur
+    api_response = api_instance.quotes_author_author_get(author)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QuotesApi->quotesSearchGet: %s\n" % e)</code></pre>
+    print("Exception when calling QuotesApi->quotesAuthorAuthorGet: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
                           <h2>Parameters</h2>
 
-
-
-
-
-                            <div class="methodsubtabletitle">Query parameters</div>
+                            <div class="methodsubtabletitle">Path parameters</div>
                             <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">author</td>
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">author*</td>
 <td>
 
 
-    <div id="d2e199_quotesSearchGet_author">
+    <div id="d2e199_quotesAuthorAuthorGet_author">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -2856,26 +2474,9 @@ except ApiException as e:
                         Donnez un auteur
                     </div>
             </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                                <tr><td style="width:150px;">tag</td>
-<td>
-
-
-    <div id="d2e199_quotesSearchGet_tag">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description">
-                        Donnez un thème
-                    </div>
-            </div>
+                <div class="inner required">
+                    Required
+                </div>
         </div>
     </div>
 </td>
@@ -2883,19 +2484,23 @@ except ApiException as e:
 
                             </table>
 
+
+
+
+
                           <h2>Responses</h2>
                             <h3> Status: 200 - author/tag exists  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-quotesSearchGet-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-quotesAuthorAuthorGet-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-quotesSearchGet-200-schema">
-                                  <div id='responses-quotesSearchGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-quotesAuthorAuthorGet-200-schema">
+                                  <div id='responses-quotesAuthorAuthorGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -2919,23 +2524,307 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-quotesSearchGet-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-quotesSearchGet-200-schema-200');
+                                        $('#responses-quotesAuthorAuthorGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-quotesAuthorAuthorGet-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-quotesSearchGet-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-quotesAuthorAuthorGet-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
-                            <h3> Status: 400 - Invalide auteur/tag insérer </h3>
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Quotes-quotesTagsTagsGet">
+                      <article id="api-Quotes-quotesTagsTagsGet-0" data-group="User" data-name="quotesTagsTagsGet" data-version="0">
+                        <div class="pull-left">
+                          <h1>quotesTagsTagsGet</h1>
+                          <p>Recherche d&#39;un proverbe par tags</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Quotes/tags/{tags}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Quotes-quotesTagsTagsGet-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Quotes-quotesTagsTagsGet-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Quotes-quotesTagsTagsGet-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://localhost/Quotes/tags/{tags}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.QuotesApi;
+
+import java.io.File;
+import java.util.*;
+
+public class QuotesApiExample {
+
+    public static void main(String[] args) {
+        
+        QuotesApi apiInstance = new QuotesApi();
+        String tags = tags_example; // String | Donnez un thème
+        try {
+            Quote result = apiInstance.quotesTagsTagsGet(tags);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QuotesApi#quotesTagsTagsGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.QuotesApi;
+
+public class QuotesApiExample {
+
+    public static void main(String[] args) {
+        QuotesApi apiInstance = new QuotesApi();
+        String tags = tags_example; // String | Donnez un thème
+        try {
+            Quote result = apiInstance.quotesTagsTagsGet(tags);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling QuotesApi#quotesTagsTagsGet");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *tags = tags_example; // Donnez un thème
+
+QuotesApi *apiInstance = [[QuotesApi alloc] init];
+
+// Recherche d'un proverbe par tags
+[apiInstance quotesTagsTagsGetWith:tags
+              completionHandler: ^(Quote output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var PostalCardGenerator = require('postal_card_generator');
+
+var api = new PostalCardGenerator.QuotesApi()
+
+var tags = tags_example; // {String} Donnez un thème
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.quotesTagsTagsGet(tags, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class quotesTagsTagsGetExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new QuotesApi();
+            var tags = tags_example;  // String | Donnez un thème
+
+            try
+            {
+                // Recherche d'un proverbe par tags
+                Quote result = apiInstance.quotesTagsTagsGet(tags);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling QuotesApi.quotesTagsTagsGet: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\QuotesApi();
+$tags = tags_example; // String | Donnez un thème
+
+try {
+    $result = $api_instance->quotesTagsTagsGet($tags);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling QuotesApi->quotesTagsTagsGet: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::QuotesApi;
+
+my $api_instance = WWW::SwaggerClient::QuotesApi->new();
+my $tags = tags_example; # String | Donnez un thème
+
+eval { 
+    my $result = $api_instance->quotesTagsTagsGet(tags => $tags);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling QuotesApi->quotesTagsTagsGet: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Quotes-quotesTagsTagsGet-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.QuotesApi()
+tags = tags_example # String | Donnez un thème
+
+try: 
+    # Recherche d'un proverbe par tags
+    api_response = api_instance.quotes_tags_tags_get(tags)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QuotesApi->quotesTagsTagsGet: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">tags*</td>
+<td>
+
+
+    <div id="d2e199_quotesTagsTagsGet_tags">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description">
+                        Donnez un thème
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - quote exists  </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-quotesTagsTagsGet-200-schema">Schema</a>
+                                </li>
+
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-quotesTagsTagsGet-200-schema">
+                                  <div id='responses-quotesTagsTagsGet-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "quote exists ",
+  "schema" : {
+    "$ref" : "#/definitions/Quote"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-quotesTagsTagsGet-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-quotesTagsTagsGet-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-quotesTagsTagsGet-200-schema-data' type='hidden' value=''></input>
+                                </div>
                             </div>
 
                         </article>
@@ -2947,10 +2836,10 @@ except ApiException as e:
             <div id="api-_footer">
               <p>Suggestions, contact, support and error reporting;
                   <div class="app-desc">Information URL: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
-                  <div class="app-desc">Contact Info: <a href="apiteam@swagger.io">apiteam@swagger.io</a></div>
+                  <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
               </p>
-                <div class="license-info">Apache 2.0</div>
-                <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+                <div class="license-info">All rights reserved</div>
+                <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
             </div>
           </div>
       </div>

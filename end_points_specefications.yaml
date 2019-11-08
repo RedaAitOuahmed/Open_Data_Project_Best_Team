@@ -1,42 +1,28 @@
 swagger: "2.0"
 info:
-  description: "Dans ce projet, on va récupérer des poèmes à l'aide des api : ......., par la suite analyser le text de poème pour sortir les thématiques les plus représentatives et associer a ses derniere des images du même thème"
+  description: "Dans ce projet, on va récupérer des proverbes à l'aide d'une API. La deuxième API contient des images et le but final est de générer une carte postale avec une image et un proverbe. Chaque proverbe est défini par des tags qui permmettent d'associer une image correspondante. Voici en détails la description des modèles et des routes."
   version: "1.0.0"
-  title: "Open Poèmes API"
-  termsOfService: "http://swagger.io/terms/"
-  contact:
-    email: "apiteam@swagger.io"
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "petstore.swagger.io"
-basePath: "/v2"
+  title: "Postal card generator"
 tags:
 - name: "Quotes"
 schemes:
 - "https"
 - "http"
 paths:
-  /Quotes/search:
+  /Quotes/author/{author}:
     get:
       tags:
       - "Quotes"
-      summary: "Recherche d'un poème"
+      summary: "Recherche d'un proverbe par auteur"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
       - name: "author"
-        in: "query"
+        in: "path"
         description: "Donnez un auteur"
-        required: false
-        type: "string"
-      - name: "tag"
-        in: "query"
-        description: "Donnez un thème"
-        required: false
+        required: true
         type: "string"
       responses:
         200:
@@ -45,51 +31,40 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Quote"
-        400:
-          description: "Invalide auteur/tag insérer"
-  /Quotes/{id}:
+  /Quotes/tags/{tags}:
     get:
       tags:
       - "Quotes"
-      summary: "Recherche d'un poème par id"
+      summary: "Recherche d'un proverbe par tags"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
-      - name: "id"
+      - name: "tags"
         in: "path"
-        description: "quote id"
+        description: "Donnez un thème"
         required: true
-        type: "integer"
+        type: "string"
       responses:
         200:
           description: "quote exists "
           schema:
             $ref: "#/definitions/Quote"
-        400:
-          description: "Invalide quote id"
-  /PostalCards/search:
+  /postalcard/author/{author}:
     get:
       tags:
       - "Postal Cards"
       summary: "Get a postal card by quote author or quote tag"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
       - name: "author"
-        in: "query"
+        in: "path"
         description: "Donnez un auteur"
-        required: false
-        type: "string"
-      - name: "tag"
-        in: "query"
-        description: "Donnez un thème"
-        required: false
+        required: true
         type: "string"
       responses:
         200:
@@ -98,22 +73,19 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/PostalCard"
-        400:
-          description: "Invalide auteur/tag insérer"
-  /PostalCards/{id}:
+  /postalcard/tags/{tag}:
     get:
       tags:
       - "Postal Cards"
       summary: "Recherche d'une carte postale par id"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
-      - name: "id"
+      - name: "tag"
         in: "path"
-        description: "quote id"
+        description: "quote tags"
         required: true
         type: "integer"
       responses:
@@ -121,16 +93,13 @@ paths:
           description: "postal card exists "
           schema:
             $ref: "#/definitions/PostalCard"
-        400:
-          description: "Invalide postal card id"
-  /PostalCards/random:
+  /postalcard/random:
     get:
       tags:
       - "Postal Cards"
       summary: "Get a random postal card"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       responses:
@@ -138,22 +107,19 @@ paths:
           description: "a postal card exists "
           schema:
             $ref: "#/definitions/PostalCard"
-        400:
-          description: "No postal card id"
-  /Images/search:
+  /Images/getByTheme/{theme}:
     get:
       tags:
       - "Images"
       summary: "Recherche d'une image"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
-      - name: "search_field"
-        in: "query"
-        required: false
+      - name: "theme"
+        in: "path"
+        required: true
         type: "string"
       responses:
         200:
@@ -162,16 +128,13 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Image"
-        400:
-          description: "Invalide search term insérer"
-  /Images/{id}:
+  /Images/getById/{id}:
     get:
       tags:
       - "Images"
       summary: "Recherche d'une image par id"
       description: ""
       produces:
-      - "application/xml"
       - "application/json"
       - "application/csv"
       parameters:
@@ -185,8 +148,6 @@ paths:
           description: "image exists "
           schema:
             $ref: "#/definitions/Image"
-        400:
-          description: "Invalide image id"
 securityDefinitions:
   petstore_auth:
     type: "oauth2"
@@ -219,8 +180,6 @@ definitions:
       language:
         type: "string"
         description: "language of quote"
-    xml:
-      name: "Order"
   PostalCard:
     type: "object"
     properties:
@@ -243,10 +202,4 @@ definitions:
         type: "string"
 
 
-externalDocs:
-  description: "Find out more about Swagger"
-<<<<<<< HEAD
-  url: "http://swagger.io"
-=======
-  url: "http://swagger.io"
->>>>>>> c3bc11a88e576ab4762c41e9dbfd2cef1682aa71
+
