@@ -13,6 +13,15 @@ module.exports = function(app) {
             res.end()
         })
 
+    });
+    app.get('/final_client', function(req,res) {
+        fs.readFile("./client/final_client/index.html", function(err, html) {
+            if(err){throw err;}
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(html)
+            res.end()
+        })
+
     })
 
 
