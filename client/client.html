@@ -10,7 +10,6 @@
 <body>
         <button type="button" id="jsonbtn">JSON</button>
         <button type="button" id="csvbtn">CSV</button>
-        <button type="button" id="xmlbtn">XML</button>
         
         <h3>debug</h3>
 
@@ -18,9 +17,6 @@
         data : <div id=datacontent></div>
     </div>
 
-    <div id="response">
-        data : <div id=datacontent></div>
-    </div>
 
 </body>
 </html>
@@ -28,8 +24,7 @@
 <script>
 jsonbtn = document.getElementById("jsonbtn")
 csvbtn = document.getElementById("csvbtn")
-xmlbtn = document.getElementById("xmlbtn")
-route = '/Images/getById/1'
+route = 'postal_card/random'
 
 function fetchehpadjson(route)
 {
@@ -66,20 +61,6 @@ function fetchehpadcsv(route)
             })
 }
 
-function fetchehpadxml(route)
-{
-    fetch(route,
-        {
-            method: 'GET',
-            headers: { 'accept' : 'application/xml'}
-        }
-    ).then(function(response){
-        response.xml().then(function(data)
-        {
-            document.getElementById("datacontent").innerHTML = XML.stringify(data)
-        })
-    })
-}
 
 jsonbtn.onclick = function()
 {
@@ -91,10 +72,6 @@ csvbtn.onclick = function()
     console.log("clicked on csv")
     fetchehpadcsv(route)
 }
-xmlbtn.onclick = function()
-{
-    console.log("clicked on xml")
-    fetchehpadxml(route)
-}
+
 
 </script>

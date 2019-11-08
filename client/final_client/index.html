@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Postal Cards Generator</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <!-- Postal Cards CSS -->
+  <link href="css/postal_cards.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Postal Cards Generator</h1>
+      <h4 class="mb-5">
+        <em>Send Emotions to your loved ones</em>
+      </h4>
+      <button class="btn btn-primary btn-xl js-scroll-trigger generate_randomly"
+        id="generate_randomly">Generate Randomly</button>
+    </div>
+    <div class="overlay"></div>
+  </header>
+  <!--Postal Card-->
+  <div class="postal_card_container">
+    <a name="postal_card"/>
+    <div id="postal_card" class="box">
+    </div>
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-primary btn-lg btn-block generate_randomly" 
+      id="generate_randomly" 
+      class="generate_another">Generate Another One ?</button>
+  </div>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>We've created an awesome postal cards generator API</h2>
+          <p class="lead mb-5">This API features multiple options to generate lovely postal cards as you've never dreamed of</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="/what_we_offer" target="_blank">What We Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container text-center my-auto forms_container">
+    <br/>
+    <br/>
+    <h1 class="mb-1">You want to test it ?</h1>
+    <h4 class="mb-5">
+      <em>Here you can test the different end points that we offer</em>
+    </h4>
+    <br/>
+    <br/>
+    <br/>
+    <div class="postal_card_by_tag">
+      <form>
+        <div class="form-group">
+          <h3>Search Postal Cards by tag</h3>
+          <input class="form-control" id="postalCard_tag_input"  placeholder="Try love, life, beauty  or whatever you want">
+          <small id="emailHelp" class="form-text text-muted">Sometimes the results are really fun so don't worry about trying fun taggs.</small>
+        </div>
+        <button type="button" id="postalCard_tag_json" class="btn btn-primary action_button">  JSON  </button>
+        <button type="button" id="postalCard_tag_csv" class="btn btn-primary action_button">  Download CSV  </button>
+      </form>
+      <br/>
+      <br/>
+      <div id="postalCard_tag_json_results" class="api_results">
+        <!-- Results will be added with js code -->
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="postal_card_by_author">
+        <form>
+          <div class="form-group">
+            <h3>Search Postal Cards by quote author</h3>
+            <input class="form-control" id="postalCard_author_input"  placeholder="Try Einstein">
+          </div>
+          <button type="button" id="postalCard_author_json" class="btn btn-primary action_button">  JSON  </button>
+          <button type="button" id="postalCard_author_csv" class="btn btn-primary action_button">  Download CSV  </button>
+        </form>
+        <br/>
+        <br/>
+        <div id="postalCard_author_json_results" class="api_results">
+          <!-- Results will be added with js code -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <hr>
+    <br/>
+    <br/>
+    <div class="quote_by_tag">
+        <form>
+          <div class="form-group">
+            <h3>Search quotes by tag</h3>
+            <input class="form-control" id="quote_tag_input"  placeholder="Try love, life, beauty  or whatever you want">
+          </div>
+          <button type="button" id="quote_tag_json" class="btn btn-primary action_button">  JSON  </button>
+          <button type="button" id="quote_tag_csv" class="btn btn-primary action_button">  Download CSV  </button>
+        </form>
+        <br/>
+        <br/>
+        <div id="quote_tag_json_results" class="api_results">
+          <!-- Results will be added with js code -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="quote_by_author">
+        <form>
+          <div class="form-group">
+            <h3>Search quotes by author</h3>
+            <input class="form-control" id="quote_author_input"  placeholder="Try Einstein">
+          </div>
+          <button type="button" id="quote_author_json" class="btn btn-primary action_button">  JSON  </button>
+          <button type="button" id="quote_author_csv" class="btn btn-primary action_button">  Download CSV  </button>
+        </form>
+        <br/>
+        <br/>
+        <div id="quote_author_json_results" class="api_results">
+          <!-- Results will be added with js code -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <hr>
+    <br/>
+    <br/>
+    <div class="image_by_tag">
+        <form>
+          <div class="form-group">
+            <h3>Search images by tag</h3>
+            <input class="form-control" id="image_theme_input"  placeholder="Try love, life, beauty  or whatever you want">
+          </div>
+          <button type="button" id="image_theme_json" class="btn btn-primary action_button">  JSON  </button>
+          <button type="button" id="image_theme_csv" class="btn btn-primary action_button">  Download CSV  </button>
+        </form>
+        <br/>
+        <br/>
+        <div id="image_theme_json_results" class="api_results">
+          <!-- Results will be added with js code -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="image_by_tag">
+        <form>
+          <div class="form-group">
+            <h3>Search images by ID</h3>
+            <input class="form-control" id="image_id_input"  placeholder="Try love, life, beauty  or whatever you want">
+          </div>
+          <button type="button" id="image_id_json" class="btn btn-primary action_button">  JSON  </button>
+          <button type="button" id="image_id_csv" class="btn btn-primary action_button">  Download CSV  </button>
+        </form>
+        <br/>
+        <br/>
+        <div id="image_id_json_results" class="api_results">
+          <!-- Results will be added with js code -->
+        </div>
+    </div>
+    
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+  
+  <!-- Custom scripts for our website -->
+    <script src="js/postal_cards.js"></script>
+
+</body>
+
+</html>
