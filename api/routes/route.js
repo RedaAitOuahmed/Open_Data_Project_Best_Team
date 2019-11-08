@@ -28,6 +28,16 @@ module.exports = function(app) {
 
     })
 
+    app.get('/what_we_offer', function(req,res) {
+        fs.readFile("./Swagger.html", function(err, html) {
+            if(err){throw err;}
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write(html)
+            res.end()
+        })
+
+    })
+
 
     // Image routes
     app.route('/Images/getById/:id')

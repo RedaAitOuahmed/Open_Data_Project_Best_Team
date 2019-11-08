@@ -18,7 +18,7 @@ exports.random_postalcard = function(req, res) {
     results_promise.then(results => 
       res.format({
             'application/json': function () {
-                res.json([results]);
+                res.json(results);
             },
             'application/csv': function () {
                 var li_test = []
