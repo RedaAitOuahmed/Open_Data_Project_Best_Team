@@ -5,7 +5,7 @@
 2- API images : https://pixabay.com/api/docs/#api_search_images <br/>
 
 # Explicitation des routes : 
-Voici le lien qui explicite la documentation des routes de nos API web : https://openpoeme.herokuapp.com/what_we_offer
+Voici le lien qui explicite la documentation des routes de nos API web : https://postcardgenerator.herokuapp.com/what_we_offer
 
 ## Model :
 - un modèle quotes <br/>
@@ -13,7 +13,7 @@ Voici le lien qui explicite la documentation des routes de nos API web : https:/
 - un modèle carte postale <br/>
 
 ## Objectifs :
-On génère une carte postale en croisant un proverbe et une image. Le croisement se fait par l'un des tags du proverbe. On propose plusieurs endpoints qui sont détaillés ici :  https://openpoeme.herokuapp.com/what_we_offer
+On génère une carte postale en croisant un proverbe et une image. Le croisement se fait par l'un des tags du proverbe. On propose plusieurs endpoints qui sont détaillés ici :  https://postcardgenerator.herokuapp.com/what_we_offer
 
 ## Résultats :
-https://openpoeme.herokuapp.com/final_client
+https://postcardgenerator.herokuapp.com/final_client/
