@@ -35,11 +35,7 @@ module.exports =
         }
       );
     });
-  }
-};
-  
-module.exports = 
-{
+  },
   getByTags: function (tags) 
   {
     return new Promise(function(resolve, reject)
