@@ -11,7 +11,7 @@ module.exports = {
             Request.get({
                 headers: {'content-type' : 'application/json'},
                 url:     'https://pixabay.com/api',
-                qs:   {'key' : '14176624-4fa63ba77e83e5b18bf876c11',
+                qs:   {'key' : key,
                         'id' : id }
                 }, function(error, response, body){
                 // in addition to parsing the value, deal with possible errors
