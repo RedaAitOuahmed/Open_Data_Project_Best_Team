@@ -15,7 +15,7 @@ module.exports =
       (
         {
         headers: {'content-type' : 'application/json',
-          'Authorization' : 'Token 796d1d7a3b38cc92f24840af033b8b6f6d20506f'
+          'Authorization' : Authorization
         },
         url:     'https://api.paperquotes.com/apiv1/quotes/',
         qs:   {'author' : author }
