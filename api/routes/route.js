@@ -39,6 +39,11 @@ module.exports = function(app) {
     })
 
 
+app.route('/')
+	.get(function(req, res) {
+    res.send('hello world');
+  })
+
     // Image routes
     app.route('/Images/getById/:id')
         .get(image_controller.image_by_id);
